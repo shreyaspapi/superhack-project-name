@@ -38,7 +38,7 @@ export function NavMenu() {
         <NavigationMenuItem>
           <Link href="/bridge" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Brige
+              Bridge
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

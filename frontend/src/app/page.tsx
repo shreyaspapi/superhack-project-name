@@ -1,9 +1,11 @@
+"use client";
 import Image from "next/image";
 import { ConnectButton } from "thirdweb/react";
 import thirdwebIcon from "@public/thirdweb.svg";
 import { client } from "./client";
 import { ModeToggle } from "@/components/theme-toggle";
 import { NavMenu } from "@/components/navigation-menu";
+import { useTheme } from "next-themes";
 
 export default function Home() {
   return (
@@ -14,6 +16,7 @@ export default function Home() {
 }
 
 function Header() {
+  const { resolvedTheme } = useTheme();
   return (
     <header className="flex justify-between items-center h-16">
       <div>
@@ -37,6 +40,7 @@ function Header() {
             name: "Example App",
             url: "https://example.com",
           }}
+          theme={resolvedTheme ? (resolvedTheme as "light" | "dark") : "light"}
         />
       </div>
     </header>
