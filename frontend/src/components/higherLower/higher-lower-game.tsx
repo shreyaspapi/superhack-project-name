@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import BettingForm from "./betting-form";
 import HowToPlay from "./how-to-play";
 import { ArrowDown, ArrowUp } from "lucide-react";
+import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 export default function HigherLowerGame() {
   const [selection, setSelection] = useState<"higher" | "lower" | null>(null);
@@ -49,6 +50,15 @@ export default function HigherLowerGame() {
       <div className="flex flex-col gap-4">
         <HowToPlay />
         <BettingForm />
+        <Card>
+          <CardHeader>
+            <CardTitle>Feeling lucky?</CardTitle>
+            <CardDescription>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est
+              aliquam beatae, veniam magni quia tempore repellat earum atque
+            </CardDescription>
+          </CardHeader>
+        </Card>
       </div>
     </div>
   );
