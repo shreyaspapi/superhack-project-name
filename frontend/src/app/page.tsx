@@ -6,12 +6,18 @@ import { client } from "./client";
 import { ModeToggle } from "@/components/theme-toggle";
 import { NavMenu } from "@/components/navigation-menu";
 import { useTheme } from "next-themes";
+import HigherLowerGame from "@/components/higherLower/higher-lower-game";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="p-4 pb-10 min-h-[100vh] flex flex-col container max-w-screen-lg mx-auto">
-      <Header />
-    </main>
+    <>
+      <main className="p-4 pb-10 min-h-[100vh] flex flex-col container max-w-screen-xl 2xl:max-w-screen-2xl mx-auto">
+        <Header />
+        <HigherLowerGame />
+      </main>
+      <Footer />
+    </>
   );
 }
 
