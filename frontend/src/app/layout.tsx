@@ -8,13 +8,13 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
 import { Separator } from "@/components/ui/separator";
+import Providers from "./providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "thirdweb SDK + Next starter",
-  description:
-    "Starter template for using thirdweb SDK with Next.js App router",
+  title: "Animated Umbrella",
+  description: "The future of betting is here, and its on the Blockchain.",
 };
 
 export default function RootLayout({
@@ -37,13 +37,15 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ThirdwebProvider>
-            <main className="p-4 pb-10 min-h-[100vh] flex flex-col container max-w-screen-xl 2xl:max-w-screen-2xl mx-auto">
-              <Header />
-              <Separator className="my-4" />
-              {children}
-            </main>
-            <Footer />
-            <Toaster />
+            <Providers>
+              <main className="p-4 pb-10 min-h-[100vh] flex flex-col container max-w-screen-xl 2xl:max-w-screen-2xl mx-auto">
+                <Header />
+                <Separator className="my-4" />
+                {children}
+              </main>
+              <Footer />
+              <Toaster />
+            </Providers>
           </ThirdwebProvider>
         </ThemeProvider>
       </body>
