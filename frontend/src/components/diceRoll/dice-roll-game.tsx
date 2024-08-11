@@ -1,44 +1,31 @@
 "use client";
 import React, { useState } from "react";
 import HistoryTable from "./history-table";
-import { Button } from "../ui/button";
 import BettingForm from "./betting-form";
 import HowToPlay from "./how-to-play";
-import { ArrowDown, ArrowUp } from "lucide-react";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Slider } from "../ui/slider";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 export default function DiceRollGame() {
-  const [dicePrediction, setDicePrediction] = useState<number | null>(null);
+  const [dicePrediction, setDicePrediction] = useState(10);
   return (
     <div className="grid grid-cols-[250px_3fr_2fr] gap-4 h-full">
       <HistoryTable />
       <div className="flex flex-col justify-around items-center">
         <div className="flex flex-col w-full text-9xl items-center justify-center">
-          42
-          {/* <p className="text-base mt-2 whitespace-nowrap text-nowrap w-full flex justify-center">
-            {selection ? (
-              <span className="flex gap-1 items-center">
-                Your bet is on{" "}
-                <span className="font-bold uppercase">{selection}</span>
-                {selection === "higher" ? (
-                  <ArrowUp size={18} />
-                ) : (
-                  <ArrowDown size={18} />
-                )}
-              </span>
-            ) : (
-              <span>Select higher or lower</span>
-            )}
-          </p> */}
+          {dicePrediction}
+          <div className="w-2/3 mt-8 mx-auto">
+            <Slider
+              onValueChange={setDicePrediction}
+              defaultValue={[10]}
+              max={20}
+              min={1}
+              step={1}
+            />
+          </div>
         </div>
-
-        {/* <Button
-          variant={"secondary"}
-          onClick={() => setSelection("lower")}
-          className="text-xl h-12 flex gap-2"
-        >
-          <ArrowDown size={18} /> Lower
-        </Button> */}
       </div>
       <div className="flex flex-col gap-4">
         <HowToPlay />
@@ -47,8 +34,15 @@ export default function DiceRollGame() {
           <CardHeader>
             <CardTitle>Feeling lucky?</CardTitle>
             <CardDescription>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est
-              aliquam beatae, veniam magni quia tempore repellat earum atque
+              On a roll? Feeling at the top of your game? Follow us on{" "}
+              <Link
+                className="underline"
+                href={"https://x.com/kivous911"}
+                target="_blank"
+              >
+                X
+              </Link>{" "}
+              for more high stake, high reward games.
             </CardDescription>
           </CardHeader>
         </Card>

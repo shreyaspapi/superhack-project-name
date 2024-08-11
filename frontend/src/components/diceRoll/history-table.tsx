@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Table,
@@ -17,6 +18,8 @@ import {
 } from "../ui/card";
 import { ScrollArea } from "../ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
+import FetchSubgraphData from "../data";
 
 const pastNumber = [
   { number: 1, bet: "10", label: "higher", outcome: "win" },
@@ -61,11 +64,12 @@ const pastNumber = [
 ];
 
 export default function HistoryTable() {
+  const data = FetchSubgraphData();
   return (
     <Card>
       <CardHeader>
         <CardTitle>History</CardTitle>
-        <CardDescription>Previous generated numbers</CardDescription>
+        <CardDescription>Previous rolled dice numbers</CardDescription>
       </CardHeader>
       <CardContent>
         <ScrollArea className="h-[65vh] 2xl:h-[80vh]">
