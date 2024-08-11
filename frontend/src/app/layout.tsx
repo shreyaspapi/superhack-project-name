@@ -4,6 +4,9 @@ import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -32,7 +35,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ThirdwebProvider>{children}</ThirdwebProvider>
+          <ThirdwebProvider>
+            <main className="p-4 pb-10 min-h-[100vh] flex flex-col container max-w-screen-xl 2xl:max-w-screen-2xl mx-auto">
+              <Header />
+              {children}
+            </main>
+            <Footer />
+            <Toaster />
+          </ThirdwebProvider>
         </ThemeProvider>
       </body>
     </html>
