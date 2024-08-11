@@ -17,7 +17,7 @@ async function main() {
   const HiLoFactory = await hre.ethers.getContractFactory("HiLo");
 
   // Deploy the contract
-  const HiLo = await HiLoFactory.deploy("0x549Ebba8036Ab746611B4fFA1423eb0A4Df61440", "0x6CC14824Ea2918f5De5C2f75A9Da968ad4BD6344");
+  const HiLo = await HiLoFactory.deploy("0x4821932D0CDd71225A6d914706A621e0389D7061", "0x6CC14824Ea2918f5De5C2f75A9Da968ad4BD6344");
 
   // Wait for the contract to be deployed
   await HiLo.deployed();
