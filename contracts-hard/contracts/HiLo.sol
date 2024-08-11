@@ -1,16 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.19;
 
-import {VRFConsumerBaseV2Plus} from "@chainlink/contracts/src/v0.8/vrf/dev/VRFConsumerBaseV2Plus.sol";
-import {VRFV2PlusClient} from "@chainlink/contracts/src/v0.8/vrf/dev/libraries/VRFV2PlusClient.sol";
+import { IEntropyConsumer } from "@pythnetwork/entropy-sdk-solidity/IEntropyConsumer.sol";
+import { IEntropy } from "@pythnetwork/entropy-sdk-solidity/IEntropy.sol";
 
-contract DiceRoll is VRFConsumerBaseV2Plus {
+contract DiceRoll is IEntropyConsumer {
     uint256 private constant ROLL_IN_PROGRESS = 42;
 
     uint256 public s_subscriptionId;
 
-    address public vrfCoordinator = 0x9DdfaCa8183c41ad55329BdeeD9F6A8d53168B1B;
-
+    IEntropy entropy = IEntropy(0x4821932D0CDd71225A6d914706A621e0389D7061);
     bytes32 public s_keyHash = 0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae;
 
     uint32 public callbackGasLimit = 100000;
