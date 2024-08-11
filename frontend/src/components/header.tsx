@@ -10,8 +10,8 @@ import thirdwebIcon from "@public/thirdweb.svg";
 export default function Header() {
   const { resolvedTheme } = useTheme();
   return (
-    <header className="flex relative justify-between items-center h-16">
-      <div>
+    <header className="flex justify-between items-center h-16">
+      <div className="flex gap-8">
         <a href="/">
           <Image
             src={thirdwebIcon}
@@ -22,8 +22,6 @@ export default function Header() {
             }}
           ></Image>
         </a>
-      </div>
-      <div className="absolute w-full">
         <NavMenu />
       </div>
       <div className="flex justify-between gap-4 items-center">
