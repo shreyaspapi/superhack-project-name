@@ -36,7 +36,12 @@ export function NavMenu() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/bridge" legacyBehavior passHref>
+          <Link
+            href="https://google.com"
+            target="_blank"
+            legacyBehavior
+            passHref
+          >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Bridge
             </NavigationMenuLink>
