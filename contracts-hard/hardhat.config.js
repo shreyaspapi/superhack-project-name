@@ -19,8 +19,7 @@ const MAINNET_RPC_URL =
 const POLYGON_MAINNET_RPC_URL =
     process.env.POLYGON_MAINNET_RPC_URL || "https://polygon-mainnet.alchemyapi.io/v2/your-api-key"
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL
-const AMOY_RPC_URL =
-    process.env.AMOY_RPC_URL || "https://polygon-amoy.infura.io/v3/your-api-key"
+const AMOY_RPC_URL = process.env.AMOY_RPC_URL || "https://polygon-amoy.infura.io/v3/your-api-key"
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 // optional
 const MNEMONIC = process.env.MNEMONIC || "Your mnemonic"
@@ -75,6 +74,11 @@ module.exports = {
             //   },
             chainId: 11155111,
         },
+        arbitrumSepolia: {
+            url: "https://sepolia-rollup.arbitrum.io/rpc",
+            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            chainId: 421614,
+        },
         mainnet: {
             url: MAINNET_RPC_URL,
             accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
@@ -103,7 +107,27 @@ module.exports = {
             mainnet: ETHERSCAN_API_KEY,
             polygon: POLYGONSCAN_API_KEY,
             polygonMumbai: POLYGONSCAN_API_KEY,
+            arbitrumSepolia: "RA8UDMUQZF5DQVIENY73PKWWQI2RZAEV29",
         },
+        customChains: [
+            {
+                network: "arbitrumSepolia",
+                name: "Arbitrum Sepolia",
+                chainId: 421614,
+                // url: "https://sepolia-rollup.arbitrum.io/rpc",
+                urls: {
+                     browserURL: "https://sepolia.arbiscan.io",
+                     apiURL: "https://api-sepolia.arbiscan.io/api",
+                },
+                ens: "arbitrum.eth",
+                nativeCurrency: {
+                    name: "Arbitrum Ether",
+                    symbol: "AETH",
+                    decimals: 18,
+                },
+                // blockExplorer: "https://sepolia.arbiscan.io",
+            },
+        ],
     },
     gasReporter: {
         enabled: REPORT_GAS,

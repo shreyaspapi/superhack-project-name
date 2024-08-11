@@ -9,11 +9,11 @@ contract DiceRoll is VRFConsumerBaseV2Plus {
 
     uint256 public s_subscriptionId;
 
-    address public vrfCoordinator = 0x9DdfaCa8183c41ad55329BdeeD9F6A8d53168B1B;
+    address public vrfCoordinator = 0x5CE8D5A2BC84beb22a398CCA51996F7930313D61;
 
-    bytes32 public s_keyHash = 0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae;
+    bytes32 public s_keyHash = 0x1770bdc7eec7771f7ba4ffd640f34260d7f095b79c92d34a5b2551d6f6cfd2be;
 
-    uint32 public callbackGasLimit = 100000;
+    uint32 public callbackGasLimit = 1000000;
 
     uint16 public requestConfirmations = 3;
 

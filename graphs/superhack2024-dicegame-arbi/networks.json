@@ -1,0 +1,8 @@
+{
+  "arbitrum-sepolia": {
+    "DiceRoll": {
+      "address": "0x2270BB90c01891Eb2d3851f5B9be3b250c5b5bEc",
+      "startBlock": 70393266
+    }
+  }
+}
