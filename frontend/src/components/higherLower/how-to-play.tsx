@@ -10,7 +10,6 @@ export default function HowToPlay() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est
           aliquam beatae, veniam magni quia tempore repellat earum atque
           pariatur, quibusdam dolore. Quaerat molestias laudantium id similique,
-          nihil deleniti illo!
         </CardDescription>
       </CardHeader>
     </Card>

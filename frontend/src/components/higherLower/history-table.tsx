@@ -68,7 +68,7 @@ export default function HistoryTable() {
         <CardDescription>Previous generated numbers</CardDescription>
       </CardHeader>
       <CardContent>
-        <ScrollArea className="h-[70vh] 2xl:h-[80vh]">
+        <ScrollArea className="h-[65vh] 2xl:h-[80vh]">
           <Table>
             <TableHeader>
               <TableRow>

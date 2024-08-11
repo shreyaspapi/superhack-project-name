@@ -6,6 +6,7 @@ import { NavMenu } from "./navigation-menu";
 import { ModeToggle } from "./theme-toggle";
 import Image from "next/image";
 import thirdwebIcon from "@public/thirdweb.svg";
+import { Button, buttonVariants } from "./ui/button";
 
 export default function Header() {
   const { resolvedTheme } = useTheme();
@@ -27,6 +28,14 @@ export default function Header() {
       <div className="flex justify-between gap-4 items-center">
         <ModeToggle />
         <ConnectButton
+          connectButton={{
+            style: {
+              padding: "0.5rem 1rem",
+              borderRadius: "0.5rem",
+              height: "2.5rem",
+              maxHeight: "2.5rem",
+            },
+          }}
           client={client}
           appMetadata={{
             name: "Example App",

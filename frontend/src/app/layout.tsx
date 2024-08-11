@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/toaster";
+import { Separator } from "@/components/ui/separator";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -38,6 +39,7 @@ export default function RootLayout({
           <ThirdwebProvider>
             <main className="p-4 pb-10 min-h-[100vh] flex flex-col container max-w-screen-xl 2xl:max-w-screen-2xl mx-auto">
               <Header />
+              <Separator className="my-4" />
               {children}
             </main>
             <Footer />
