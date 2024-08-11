@@ -1,54 +1,21 @@
-"use client";
-import Image from "next/image";
-import { ConnectButton } from "thirdweb/react";
-import thirdwebIcon from "@public/thirdweb.svg";
-import { client } from "./client";
-import { ModeToggle } from "@/components/theme-toggle";
-import { NavMenu } from "@/components/navigation-menu";
-import { useTheme } from "next-themes";
-import HigherLowerGame from "@/components/higherLower/higher-lower-game";
-import Footer from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <>
-      <main className="p-4 pb-10 min-h-[100vh] flex flex-col container max-w-screen-xl 2xl:max-w-screen-2xl mx-auto">
-        <Header />
-        <HigherLowerGame />
-      </main>
-      <Footer />
-    </>
-  );
-}
-
-function Header() {
-  const { resolvedTheme } = useTheme();
-  return (
-    <header className="flex justify-between items-center h-16">
-      <div>
-        <a href="/">
-          <Image
-            src={thirdwebIcon}
-            alt=""
-            className="size-[48px] md:size-[48px]"
-            style={{
-              filter: "drop-shadow(0px 0px 24px #a726a9a8)",
-            }}
-          ></Image>
-        </a>
-      </div>
-      <NavMenu />
-      <div className="flex justify-between gap-4 items-center">
-        <ModeToggle />
-        <ConnectButton
-          client={client}
-          appMetadata={{
-            name: "Example App",
-            url: "https://example.com",
-          }}
-          theme={resolvedTheme ? (resolvedTheme as "light" | "dark") : "light"}
-        />
-      </div>
-    </header>
+    <div className="h-[calc(100vh-80px)] flex flex-col gap-4 items-center justify-center">
+      <h1 className="text-4xl font-bold text-center">
+        Welcome to Animated Umbrella
+      </h1>
+      <p className="text-center">
+        The future of betting is here, and its on the Blockchain.
+      </p>
+      <p className="text-center mt-4 mb-28 flex gap-4">
+        <Button variant={"secondary"}>Check Demo</Button>
+        <Button asChild>
+          <Link href={"/higherlower"}>Launch App</Link>
+        </Button>
+      </p>
+    </div>
   );
 }
