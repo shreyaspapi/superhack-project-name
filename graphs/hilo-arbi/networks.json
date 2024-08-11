@@ -1,0 +1,8 @@
+{
+  "arbitrum-sepolia": {
+    "HiLo": {
+      "address": "0x3dc0629a30b2218d206ff33cd9189fa30873b5a1",
+      "startBlock": 70398066
+    }
+  }
+}

@@ -128,7 +128,7 @@ module.exports = {
                 // blockExplorer: "https://sepolia.arbiscan.io",
             },
         ],
-    },
+    }, // 0x3dc0629a30b2218d206ff33cd9189fa30873b5a1
     gasReporter: {
         enabled: REPORT_GAS,
         currency: "USD",

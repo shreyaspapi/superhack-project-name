@@ -1,0 +1,23 @@
+type BetPlaced @entity(immutable: true) {
+  id: Bytes!
+  sequenceNumber: BigInt! # uint64
+  player: Bytes! # address
+  amount: BigInt! # uint256
+  multiplier: BigInt! # uint256
+  isHigh: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Result @entity(immutable: true) {
+  id: Bytes!
+  sequenceNumber: BigInt! # uint64
+  randomNumber: BigInt! # uint256
+  player: Bytes! # address
+  isHigh: Boolean! # bool
+  winnings: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

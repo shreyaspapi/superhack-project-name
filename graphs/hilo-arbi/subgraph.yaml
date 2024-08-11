@@ -1,0 +1,29 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: HiLo
+    network: arbitrum-sepolia
+    source:
+      address: "0x3dc0629a30b2218d206ff33cd9189fa30873b5a1"
+      abi: HiLo
+      startBlock: 70398066
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BetPlaced
+        - Result
+      abis:
+        - name: HiLo
+          file: ./abis/HiLo.json
+      eventHandlers:
+        - event: BetPlaced(uint64,address,uint256,uint256,bool)
+          handler: handleBetPlaced
+        - event: Result(uint64,uint256,address,bool,uint256)
+          handler: handleResult
+      file: ./src/hi-lo.ts

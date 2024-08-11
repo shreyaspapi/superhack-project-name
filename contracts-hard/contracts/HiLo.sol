@@ -68,16 +68,13 @@ contract HiLo is IEntropyConsumer {
         // Calculate winnings
         Bet storage bet = bets[sequenceNumber];
         uint256 winnings;
-        if (number >((1 / bet.multiplier) * 100)) {
-            // Player wins
+        if (number % 100 > ((1 / bet.multiplier) * 100)) {
             winnings = bet.amount * bet.multiplier;
+            payable(player).transfer(winnings);
         } else {
             // Player loses
             winnings = 0;
         }
-
-        // Transfer winnings
-        payable(player).transfer(winnings);
 
         emit Result(sequenceNumber, number, player, bet.isHigh, winnings);
     }
