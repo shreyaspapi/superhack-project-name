@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "DiceRoll": {
+      "address": "0xf67A265eDA95742026ABe2f8B482542D869D733A",
+      "startBlock": 6479538
+    }
+  }
+}

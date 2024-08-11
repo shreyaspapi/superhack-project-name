@@ -1,0 +1,41 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: DiceRoll
+    network: sepolia
+    source:
+      address: "0xf67A265eDA95742026ABe2f8B482542D869D733A"
+      abi: DiceRoll
+      startBlock: 6479538
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CoordinatorSet
+        - DiceLanded
+        - DiceResult
+        - DiceRolled
+        - OwnershipTransferRequested
+        - OwnershipTransferred
+      abis:
+        - name: DiceRoll
+          file: ./abis/DiceRoll.json
+      eventHandlers:
+        - event: CoordinatorSet(address)
+          handler: handleCoordinatorSet
+        - event: DiceLanded(indexed uint256,indexed uint256)
+          handler: handleDiceLanded
+        - event: DiceResult(indexed address,uint256,bool,uint256)
+          handler: handleDiceResult
+        - event: DiceRolled(indexed uint256,indexed address,uint256,uint256,bool)
+          handler: handleDiceRolled
+        - event: OwnershipTransferRequested(indexed address,indexed address)
+          handler: handleOwnershipTransferRequested
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: ./src/dice-roll.ts
