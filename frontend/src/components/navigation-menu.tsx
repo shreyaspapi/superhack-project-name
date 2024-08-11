@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export function NavMenu() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="mx-auto">
       <NavigationMenuList className="flex">
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
@@ -22,16 +22,16 @@ export function NavMenu() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/leaderboard" legacyBehavior passHref>
+          <Link href="/higherlower" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Leaderboard
+              Higher Lower
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/profile" legacyBehavior passHref>
+          <Link href="/diceroll" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              My Profile
+              Dice Roll
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -39,6 +39,13 @@ export function NavMenu() {
           <Link href="/bridge" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Bridge
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/myprofile" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              My Profile
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
